@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3001;
 
 app.use(
   cors({
-    origin: "http://localhost:3000", // URL frontend kamu
+    origin: "http://localhost:3000",
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type"],
   })
@@ -25,9 +25,9 @@ app.get("/", (req, res) => {
 app.listen(PORT, async () => {
   try {
     await sequelize.authenticate();
-    console.log("✅ Database connected!");
-    console.log(`🚀 Server running on port ${PORT}`);
+    console.log("Database connected!");
+    console.log(`Server running on port ${PORT}`);
   } catch (error) {
-    console.error("❌ Unable to connect to database:", error);
+    console.error("Unable to connect to database:", error);
   }
 });
